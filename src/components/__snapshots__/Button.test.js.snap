@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should set the count value on click 1`] = `
+<div>
+  <p>
+    3
+  </p>
+  <button
+    id="counter"
+    onClick={[Function]}
+  >
+    Click me
+  </button>
+</div>
+`;

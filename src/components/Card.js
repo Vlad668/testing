@@ -28,11 +28,11 @@ const Card = (props) =>{
   
   return (
     <React.Fragment>
-    <section className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5'>
-    <img alt='profile' src={`https://robohash.org/${id}?200x200`}/>
-    <div>
-      <h3>{name}</h3>
-      <span>{email}</span>
+    <section key='097' id='test' className='tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5'>
+    <img key='8' alt='profile' src={`https://robohash.org/${id}?200x200`}/>
+    <div key='40'>
+      <h3 key='90'>{name}</h3>
+      <span key='9'>{email}</span>
     </div>
     </section>
     </React.Fragment>

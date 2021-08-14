@@ -23,9 +23,9 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
-    "build": "react-scripts build && cp manifest.json build/ && sw-precache --root='build/' --static-file-globs='build/**/!(*map*)'",
+    "build": "react-scripts build && cp ./public/manifest.json build/ && sw-precache --root='build/' --static-file-globs='build/**/!(*map*)'",
     "gh-pages": "gh-pages -d build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -47,9 +47,14 @@
     ]
   },
   "devDependencies": {
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.6.1",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.6.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gh-pages": "^0.11.0",
     "react-scripts": "0.2.1",
+    "react-test-renderer": "^17.0.2",
+    "react-testing-library": "^8.0.1",
     "sw-precache": "^4.0.0"
   }
 }

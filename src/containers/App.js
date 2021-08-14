@@ -1,11 +1,13 @@
 import {Fragment, useEffect, useState} from 'react'
 import CardList from '../components/CardList'
+import Button from '../components/Button'
 import SearchBox from '../components/SearchBox'
 import './App.css'
 // import axios from 'axios'
 import Scroll from '../components/Scroll'
 import {connect} from 'react-redux'
 import {setSearchField, setRobotsFromActions} from '../actions' /// 1 mark /// 2
+import MainPage from '../components/MainPage'
 
 
 // under this app we add all the app components
@@ -35,60 +37,20 @@ const mapDispatchToProps = (dispatch) => {
 function App(props) {
  
 // from redux
-const {searchField, dataFromInpute, onRequestRobots, isPending, robotsReducer} = props
+// const {searchField, dataFromInpute, onRequestRobots, isPending, robotsReducer} = props
 
-    // const [robotsNewFromSearch, setRobots] = useState([])
-    // const [searchField, setSearchField] = useState('')
-    // const [isPending, setIsPending] = useState(true);
-                                                                 const [count, setCount] = useState(0);
-                                        
-// -------------------------------------------------
-// passes data to searchfield 
-// console.log(props)
 
-// =================== ---data flow---> ===============================
-// const dataFromInpute = (event) => {
-//     setSearchField(event.target.value)
-    
-// }
-//  ====================WE CAN USE EITHER THIS==============================================
-
-// componentDidMount(){
-    //  axios.get('https://jsonplaceholder.typicode.com/users')
-    //      .then(res => {
-    //      this.setState({
-    //         robotsNewFromSearch: res.data
-    //      })
-    //  })
-    //  .catch(function (error) {
-    //     console.log(error);
-    //   })
-// }
-// -----------------------OR THIS------------------------------------------------------------
-// const getUsers = async (api, callBack) => {
-//     try{
-//         let res = await axios.get(api);
-//         let { data } = res;
-//         callBack(data)
-        
-//         // setRobots(data);
-//     }
-//     catch(e) {
-//         console.log(e)
-//     }
-    
-// };
 
 // ======================== <-----data flow ========================
-useEffect(() => {
+// useEffect(() => {
     
-    setTimeout(() => {   //timeout to test loading
-    // getUsers("https://jsonplaceholder.typicode.com/users", setRobots)
-    // setIsPending(false);
-    onRequestRobots()
-}, 1000);
-    // document.title = `You clicked ${count} times`;
-},[])//if we add smth in the [], the dom is rerendered every time the value is changed
+//     setTimeout(() => {   //timeout to test loading
+//     // getUsers("https://jsonplaceholder.typicode.com/users", setRobots)
+//     // setIsPending(false);
+//     onRequestRobots()
+// }, 1000);
+//     // document.title = `You clicked ${count} times`;
+// },[])//if we add smth in the [], the dom is rerendered every time the value is changed
 
 
 
@@ -97,34 +59,15 @@ useEffect(() => {
 
 // ------------------------------------------------
   
-        const filteredRobots = robotsReducer.filter(robot=>{
-            return robot.name.toLowerCase().includes(searchField.toLowerCase())
-         })
+        // const filteredRobots = robotsReducer.filter(robot=>{
+        //     return robot.name.toLowerCase().includes(searchField.toLowerCase())
+        //  })
         //  ------------------------------------------------
         
         
             return (
                 
-                <Fragment>
-                    <section className='tc'>
-                        
-                        {/* ================ */}
-                                            <p>You clicked {count} times</p>
-                                            <button onClick={() => setCount(count + 1)}>Click me</button>
-                        {/* ================= */}
-    
-                        <h1 className='f1'>Robo Friends</h1>    
-                        {/* data flow--inpute----> */}
-                        <SearchBox inputSearch={dataFromInpute}/>
-    
-                        {/* <----output----data flow */}
-                       <Scroll> 
-                           {/* // handles loading */}
-                       { isPending && <div>Loading...</div> }                            
-                       {filteredRobots && <CardList robotsPassed={filteredRobots} />}
-                       </Scroll>
-                    </section>
-                </Fragment>     
+                <MainPage {...props}/>  
             )
         
 

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders without crashing 1`] = `
+<section
+  className="tc"
+>
+  <h1
+    className="f1"
+  >
+    Robo Friends
+  </h1>
+  <div
+    className="pa2"
+  >
+    <input
+      className="pa3 ba b--grean bg-lightest-blue"
+      placeholder="Type your bot"
+      type="search"
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "border": "1px solid black",
+        "height": "600px",
+        "overflow": "scroll",
+      }
+    }
+  >
+    <section />
+  </div>
+</section>
+`;
