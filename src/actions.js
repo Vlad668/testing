@@ -11,7 +11,7 @@ export const setSearchField = (text) => ({
 })
 
 
-export const setRobotsFromActions = () => async (dispatch) => {
+export const setRobotsFromActions =  () => async (dispatch) => {
     try{
     dispatch({type:REQUEST_ROBOTS_PENDING});
     const res = await axios.get("https://jsonplaceholder.typicode.com/users")
