@@ -23,7 +23,7 @@ useEffect(() => {
     onRequestRobots()
 }, 1000);
     // document.title = `You clicked ${count} times`;
-},[])//if we add smth in the [], the dom is rerendered every time the value is changed
+})//if we add smth in the [], the dom is rerendered every time the value is changed
 
 
   
